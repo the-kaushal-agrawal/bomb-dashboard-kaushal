@@ -25,6 +25,7 @@ const Boardroom = lazy(() => import('./views/Boardroom'));
 const Bond = lazy(() => import('./views/Bond'));
 const Xbomb = lazy(() => import('./views/Stake'));
 const Supply = lazy(() => import('./views/Supply'));
+const Dashboard = lazy(()=> import('./views/Dashboard'));
 // const SBS = lazy(() => import('./views/Sbs'));
 // const Liquidity = lazy(() => import('./views/Liquidity'));
 
@@ -67,6 +68,9 @@ const App: React.FC = () => {
             <Route path="/supply">
               <Supply />
             </Route>
+            <Route path="/dashboard">
+              <Dashboard />
+            </Route>
             {/* <Route path="/sbs">
               <SBS />
             </Route> */}
@@ -92,7 +96,7 @@ const UseWalletProviderWrapper = (props: any) => {
   return <UseWalletProvider chainId={chainId} {...props}></UseWalletProvider>;
 }
 
-const Providers: React.FC = ({children}) => {
+const Providers: React.FC = ({ children }) => {
   return (
     <TP1 theme={theme}>
       <TP theme={newTheme}>

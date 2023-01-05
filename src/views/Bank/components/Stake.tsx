@@ -1,19 +1,19 @@
-import React, {useMemo, useContext} from 'react';
+import React, { useMemo, useContext } from 'react';
 import styled from 'styled-components';
 
 // import Button from '../../../components/Button';
-import {Button, Card, CardContent, Typography} from '@material-ui/core';
+import { Button, Card, CardContent, Typography } from '@material-ui/core';
 // import Card from '../../../components/Card';
 // import CardContent from '../../../components/CardContent';
 import CardIcon from '../../../components/CardIcon';
-import {AddIcon, RemoveIcon} from '../../../components/icons';
+import { AddIcon, RemoveIcon } from '../../../components/icons';
 import FlashOnIcon from '@material-ui/icons/FlashOn';
 import IconButton from '../../../components/IconButton';
 //import Label from '../../../components/Label';
 import Value from '../../../components/Value';
-import {ThemeContext} from 'styled-components';
+import { ThemeContext } from 'styled-components';
 
-import useApprove, {ApprovalState} from '../../../hooks/useApprove';
+import useApprove, { ApprovalState } from '../../../hooks/useApprove';
 import useModal from '../../../hooks/useModal';
 import useStake from '../../../hooks/useStake';
 import useZap from '../../../hooks/useZap';
@@ -22,23 +22,23 @@ import useStakedTokenPriceInDollars from '../../../hooks/useStakedTokenPriceInDo
 import useTokenBalance from '../../../hooks/useTokenBalance';
 import useWithdraw from '../../../hooks/useWithdraw';
 
-import {getDisplayBalance} from '../../../utils/formatBalance';
+import { getDisplayBalance } from '../../../utils/formatBalance';
 
 import DepositModal from './DepositModal';
 import WithdrawModal from './WithdrawModal';
 import ZapModal from './ZapModal';
 import TokenSymbol from '../../../components/TokenSymbol';
-import {Bank} from '../../../bomb-finance';
+import { Bank } from '../../../bomb-finance';
 
 interface StakeProps {
   bank: Bank;
 }
 
 const Stake: React.FC<StakeProps> = ({ bank }) => {
-  console.log({bank})
+  console.log({ bank });
   const [approveStatus, approve] = useApprove(bank.depositToken, bank.address);
 
-  const {color: themeColor} = useContext(ThemeContext);
+  const { color: themeColor } = useContext(ThemeContext);
   const tokenBalance = useTokenBalance(bank.depositToken);
   const stakedBalance = useStakedBalance(bank.contract, bank.poolId);
   const stakedTokenPriceInDollars = useStakedTokenPriceInDollars(bank.depositTokenName, bank.depositToken);
@@ -49,9 +49,9 @@ const Stake: React.FC<StakeProps> = ({ bank }) => {
   const earnedInDollars = (
     Number(tokenPriceInDollars) * Number(getDisplayBalance(stakedBalance, bank.depositToken.decimal))
   ).toFixed(2);
-  const {onStake} = useStake(bank);
-  const {onZap} = useZap(bank);
-  const {onWithdraw} = useWithdraw(bank);
+  const { onStake } = useStake(bank);
+  const { onZap } = useZap(bank);
+  const { onWithdraw } = useWithdraw(bank);
 
   const [onPresentDeposit, onDismissDeposit] = useModal(
     <DepositModal
@@ -63,7 +63,7 @@ const Stake: React.FC<StakeProps> = ({ bank }) => {
         onDismissDeposit();
       }}
       tokenName={bank.depositTokenName}
-    />,
+    />, 
   );
 
   const [onPresentZap, onDissmissZap] = useModal(
@@ -101,17 +101,25 @@ const Stake: React.FC<StakeProps> = ({ bank }) => {
             </CardIcon>
             <Value value={getDisplayBalance(stakedBalance, bank.depositToken.decimal)} />
 
-            
             {/* <Label text={`≈ $${earnedInDollars}`} /> */}
 
-                 <Typography style={{textTransform: 'uppercase', color: '#fffff'}}>
-                      {`≈ $${earnedInDollars}`}
-            </Typography>
-               <Typography style={{textTransform: 'uppercase', color: '#f9d749'}}>
+            <Typography style={{ textTransform: 'uppercase', color: '#fffff' }}>{`≈ $${earnedInDollars}`}</Typography>
+            <Typography style={{ textTransform: 'uppercase', color: '#f9d749' }}>
               {`${bank.depositTokenName} Staked`}
-                    </Typography>
+            </Typography>
             {/* <Label text={`${bank.depositTokenName} Staked`} /> */}
           </StyledCardHeader>
+          {/* <IconButton onClick={onPresentWithdraw}>
+            <RemoveIcon />
+            asda
+          </IconButton> */}
+          <IconButton
+            disabled={bank.closedForStaking}
+            onClick={() => (bank.closedForStaking ? null : onPresentDeposit())}
+          >
+            asdasd  
+            <AddIcon />
+          </IconButton>
           <StyledCardActions>
             {approveStatus !== ApprovalState.APPROVED ? (
               <Button
@@ -128,31 +136,27 @@ const Stake: React.FC<StakeProps> = ({ bank }) => {
                     ? 'shinyButtonDisabled'
                     : 'shinyButton'
                 }
-                style={{marginTop: '20px'}}
+                style={{ marginTop: '20px' }}
               >
                 {`Approve ${bank.depositTokenName}`}
               </Button>
             ) : (
               <>
-                <IconButton onClick={onPresentWithdraw}>
-                  <RemoveIcon />
-                </IconButton>
                 <StyledActionSpacer />
                 <IconButton
                   disabled={
                     bank.closedForStaking ||
-                      bank.depositTokenName === 'BOMB-BSHARE-LP' ||
-                       bank.depositTokenName === 'BOMB' ||
-                      bank.depositTokenName === 'BOMB-BTCB-LP' ||
-                      bank.depositTokenName === '80BOMB-20BTCB-LP' ||
-                        bank.depositTokenName === '80BSHARE-20WBNB-LP' ||
-                      bank.depositTokenName === 'BUSM-BUSD-LP' ||
-                      bank.depositTokenName === 'BBOND'
-
+                    bank.depositTokenName === 'BOMB-BSHARE-LP' ||
+                    bank.depositTokenName === 'BOMB' ||
+                    bank.depositTokenName === 'BOMB-BTCB-LP' ||
+                    bank.depositTokenName === '80BOMB-20BTCB-LP' ||
+                    bank.depositTokenName === '80BSHARE-20WBNB-LP' ||
+                    bank.depositTokenName === 'BUSM-BUSD-LP' ||
+                    bank.depositTokenName === 'BBOND'
                   }
                   onClick={() => (bank.closedForStaking ? null : onPresentZap())}
                 >
-                  <FlashOnIcon style={{color: themeColor.grey[400]}} />
+                  <FlashOnIcon style={{ color: themeColor.grey[400] }} />
                 </IconButton>
                 <StyledActionSpacer />
                 <IconButton

@@ -1,0 +1,199 @@
+.dashboard_jt {
+  color : #fff;
+}
+.dashboard_jt h2 {
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 30px;
+  color: #fff !important;
+}
+.dashboard_jt .bomb-summary {
+  box-sizing: border-box;
+  width: 80%;
+  padding: 10px 3%;
+  margin: 20px auto;
+  height: 377.25px;
+  background: rgba(35, 40, 75, 0.75);
+  backdrop-filter: blur(5px);
+  border-radius: 10px;
+}
+.dashboard_jt .bomb-summary .header-dev {
+  height: 0px;
+}
+
+.dashboard_jt .bomb-summary .head-top {
+  width: 100%;
+  padding-bottom: 5px;
+  border-bottom: 0.5px solid rgba(195, 197, 203, 0.75);
+}
+
+.dashboard_jt .bomb-summary .head-top h2 {
+ text-align: center;
+}
+
+.dashboard_jt .invest-strategy {
+  display: flex;
+  width: 80%;
+  margin: 20px auto;
+}
+
+.dashboard_jt .invest-strategy .strategy-col {
+  width: 70%;
+  padding: 10px;
+}
+
+.dashboard_jt .invest-strategy .strategy-col .read_link {
+  width: 100%;
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.dashboard_jt .invest-strategy .strategy-col .read_link a {
+  text-align: right;
+}
+
+.btn-invest {
+  box-sizing: border-box;
+
+  width: 646px;
+  height: 40px;
+
+  background: radial-gradient(
+      59345.13% 4094144349.28% at 39511.5% -2722397851.45%,
+      rgba(0, 245, 171, 0.5) 0%,
+      rgba(0, 173, 232, 0.5) 100%
+    );
+  font-weight: 800;
+  font-size: 24px;
+  line-height: 33px;
+   display: flex;
+  align-items: center;
+  text-align: center;
+  color: #ffffff;
+}
+
+.dashboard_jt .invest-strategy .strategy-col .links-to {
+  display: flex;
+  justify-content: space-between;
+}
+.dashboard_jt .invest-strategy .strategy-col .links-to div {
+  box-sizing: border-box;
+  width: 48%;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid #728cdf;
+  backdrop-filter: blur(12.5px);
+  margin: 10px 0;
+}
+
+.dashboard_jt .invest-strategy .board-room {
+  box-sizing: border-box;
+  width: 646px;
+  height: 202px;
+  background: rgba(35, 40, 75, 0.75);
+  border: 1px solid #728cdf;
+  backdrop-filter: blur(5px);
+  padding: 10px 3%;
+  border-radius: 10px;
+}
+
+.dashboard_jt .invest-strategy .board-room .head {
+  display: flex;
+  width: 100%;
+}
+.dashboard_jt .invest-strategy .board-room .head .head-img {
+  width: 10%;
+}
+
+.dashboard_jt .invest-strategy .board-room .info {
+  display: flex;
+  width: 90%;
+}
+.dashboard_jt .invest-strategy .board-room .info .content {
+ 
+}
+
+.dashboard_jt .invest-strategy .board-room .info .content .head_content {
+   display: flex;
+}
+
+.dashboard_jt .invest-strategy .board-room .info-content {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.table {
+  width: 60%;
+}
+
+.table .head {
+  display: flex;
+  justify-content: space-evenly;
+}
+ 
+
+.table .info {
+  display: flex;
+  justify-content: space-evenly;
+}
+.dashboard_jt .invest-strategy .board-room .info-content table {
+
+}
+
+.dashboard_jt .invest-strategy .news {
+  box-sizing: border-box;
+  width: 40%;
+  height: 336px;
+  padding: 10px;
+  background: rgba(35, 40, 75, 0.75);
+  border: 1px solid #728cdf;
+  backdrop-filter: blur(5px);
+  border-radius: 10px;
+}
+ /* bomb farm*/
+
+.dashboard_jt .bomb-farm {
+  box-sizing: border-box;
+margin: 20px auto;
+padding: 10px 2%;
+  width: 80%;
+  height: 377.25px;
+  background: rgba(35, 40, 75, 0.75);
+  border: 1px solid #728cdf;
+  backdrop-filter: blur(5px);
+  border-radius: 10px;
+}
+.dashboard_jt .bomb-farm .head {
+ display: flex;
+  justify-content: space-between;
+}
+.dashboard_jt .bonds-container {
+  box-sizing: border-box;
+  margin: 20px auto;
+  padding: 10px 2%;
+  width: 80%;
+  height: 377.25px;
+  background: rgba(35, 40, 75, 0.75);
+  border: 1px solid #728cdf;
+  backdrop-filter: blur(5px);
+  border-radius: 10px;
+}
+
+.dashboard_jt .bonds-container .head-show {
+  display: flex;
+}
+
+.dashboard_jt .bonds-container .head-show .head-img-show img {
+  width: 33px;
+  margin-right: 10px;
+}
+
+.dashboard_jt .bonds-container p {
+  margin: 0;
+  width: 638px;
+  height: 18px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+  color: #ffffff;
+}
