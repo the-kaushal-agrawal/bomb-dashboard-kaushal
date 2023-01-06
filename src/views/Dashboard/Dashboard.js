@@ -27,7 +27,7 @@ import { useWallet } from 'use-wallet';
 import useEarnings from '../../hooks/useEarnings';
 import Show from './components/Farmmiddle';
 import BondDash from './components/BondDashEnd';
-import { roundNumber } from '../../0x';
+import { roundAndFormatNumber } from '../../0x';
 import usebShareStats from '../../hooks/usebShareStats';
 import useBondStats from '../../hooks/useBondStats';
 import useRedeemOnBoardroom from '../../hooks/useRedeemOnBoardroom';
@@ -146,10 +146,10 @@ const Dashboard = () => {
                     <img src={f_im} />
                     <span>$BOMB</span>
                   </td>
-                  <td>{roundNumber(bombCirculatingSupply, 2)}</td>
-                  <td> {roundNumber(bombTotalSupply, 2)}</td>
+                  <td>{roundAndFormatNumber(bombCirculatingSupply, 2)}</td>
+                  <td> {roundAndFormatNumber(bombTotalSupply, 2)}</td>
                   <td>
-                    <div>${bombPriceInDollars ? roundNumber(bombPriceInDollars, 2) : '-.--'}</div>{' '}
+                    <div>${bombPriceInDollars ? roundAndFormatNumber(bombPriceInDollars, 2) : '-.--'}</div>{' '}
                     <div>{bombPriceInBNB ? bombPriceInBNB : '-.----'} BTC</div>
                   </td>
                   <td>
@@ -161,8 +161,8 @@ const Dashboard = () => {
                     <img src={fo_im} />
                     <span>$BSHARE</span>
                   </td>
-                  <td>{roundNumber(bShareCirculatingSupply, 2)} </td>
-                  <td>{roundNumber(bShareTotalSupply, 2)}</td>
+                  <td>{roundAndFormatNumber(bShareCirculatingSupply, 2)} </td>
+                  <td>{roundAndFormatNumber(bShareTotalSupply, 2)}</td>
                   <td>
                     <div>${bSharePriceInDollars ? bSharePriceInDollars : '-.--'}</div>{' '}
                     <div>{bSharePriceInBNB ? bSharePriceInBNB : '-.----'} BNB</div>
@@ -176,8 +176,8 @@ const Dashboard = () => {
                     <img src={t_im} />
                     <span>$BBOND</span>
                   </td>
-                  <td>{roundNumber(tBondCirculatingSupply, 2)}</td>
-                  <td>{roundNumber(tBondTotalSupply, 2)}</td>
+                  <td>{roundAndFormatNumber(tBondCirculatingSupply, 2)}</td>
+                  <td>{roundAndFormatNumber(tBondTotalSupply, 2)}</td>
                   <td>
                     <div>${bSharePriceInDollars ? bSharePriceInDollars : '-.--'}</div>{' '}
                     <div>{bSharePriceInBNB ? bSharePriceInBNB : '-.----'} BNB</div>
