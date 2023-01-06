@@ -156,7 +156,6 @@ const Boardroom = () => {
               <Card>
                 <CardContent align="center">
                   <Typography>Rewards</Typography>
-
                 </CardContent>
                 <CardActions style={{justifyContent: 'center'}}>
                   <Button color="primary" variant="outlined">Claim Reward</Button>
@@ -182,7 +181,7 @@ const Boardroom = () => {
           </Grid> */}
           </Box>
 
-        {!!account && (
+        {!!account && ( 
           <Box mt={5}>
             <Grid container justify="center" spacing={3} mt={10}>
               <Button

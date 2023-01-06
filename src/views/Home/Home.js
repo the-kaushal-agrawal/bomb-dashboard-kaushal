@@ -95,14 +95,17 @@ const Home = () => {
     () => (bShareStats ? Number(bShareStats.priceInDollars).toFixed(2) : null),
     [bShareStats],
   );
+
   const bSharePriceInBNB = useMemo(
     () => (bShareStats ? Number(bShareStats.tokenInFtm).toFixed(4) : null),
     [bShareStats],
   );
+
   const bShareCirculatingSupply = useMemo(
     () => (bShareStats ? String(bShareStats.circulatingSupply) : null),
     [bShareStats],
   );
+
   const bShareTotalSupply = useMemo(() => (bShareStats ? String(bShareStats.totalSupply) : null), [bShareStats]);
 
   const tBondPriceInDollars = useMemo(
@@ -279,7 +282,7 @@ const Home = () => {
 
         {/* TVL */}
         <Grid item xs={12} sm={4}>
-          <Card style={{'paddingTop': '10px'}}>
+          <Card style={{ paddingTop: '10px' }}>
             <CardContent align="center">
               <h2>Total Value Locked</h2>
               <CountUp style={{ fontSize: '25px' }} end={TVL} separator="," prefix="$" />

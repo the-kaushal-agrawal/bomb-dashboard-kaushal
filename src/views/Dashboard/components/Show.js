@@ -16,11 +16,9 @@ import { getDisplayBalance } from '../../../utils/formatBalance';
 import DepositModal from '../../Bank/components/DepositModal';
 import WithdrawModal from '../../Bank/components/WithdrawModal';
 import './show.css';
-//image import 
+//image import
 
-
-
-const Show = ({ id,img }) => {
+const Show = ({ id, img }) => {
   const bank = useBank(id);
   const statsOnPool = useStatsForPool(bank);
   const earnings = useEarnings(bank.contract, bank.earnTokenName, bank.poolId);
@@ -35,8 +33,8 @@ const Show = ({ id,img }) => {
     [tokenStats],
   );
   const earnedInDollars = (Number(tokenPriceInDollars) * Number(getDisplayBalance(earnings))).toFixed(2);
-  //stack
 
+  //stack
   const stakedBalance = useStakedBalance(bank.contract, bank.poolId);
 
   const stakedTokenPriceInDollars = useStakedTokenPriceInDollars(bank.depositTokenName, bank.depositToken);
@@ -52,7 +50,6 @@ const Show = ({ id,img }) => {
 
   //   const {onRedeem} = useRedeem(bank);
   const { onReward } = useHarvest(bank);
-  //
 
   const tokenBalance = useTokenBalance(bank.depositToken);
   const { onStake } = useStake(bank);
@@ -82,20 +79,21 @@ const Show = ({ id,img }) => {
       tokenName={bank.depositTokenName}
     />,
   );
+  console.log(statsOnPool, 'statsOnPool');
   return (
     <div className="show_container">
       <div className="head-show">
         <div className="head-img-show">
-            <img src={img}/>
+          <img src={img} />
         </div>
         <div className="info-show">
           <div className="content-show">
             <div className="head_content-show">
               <h2>Boardroom</h2>
-              <div className='recommend'>Recommended</div>
+              <div className="recommend">Recommended</div>
             </div>
           </div>
-          <div className="TVL">TVL: ${statsOnPool?.TVL}</div>
+          <div className="TVL">TVL: ${bank.closedForStaking ? '0' : statsOnPool?.TVL}</div>
         </div>
       </div>
       <div className="content-contaienr">
