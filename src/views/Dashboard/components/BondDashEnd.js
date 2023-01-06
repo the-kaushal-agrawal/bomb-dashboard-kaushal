@@ -7,8 +7,7 @@ import useTokenBalance from '../../../hooks/useTokenBalance';
 import { useTransactionAdder } from '../../../state/transactions/hooks';
 import { getDisplayBalance } from '../../../utils/formatBalance';
 import ExchangeModal from '../../Bond/components/ExchangeModal';
-
-import './bondDash.css';
+import './bondDashEnd.css';
 
 const BondDash = () => {
   
@@ -47,21 +46,7 @@ const BondDash = () => {
       tokenName={bombFinance.BBOND}
     />,
   );
-
-  // const [onPresent2, onDismiss2] = useModal(
-  //   <ExchangeModal
-  //     title={action}
-  //     description={priceDesc}
-  //     max={balance}
-  //     onConfirm={(value) => {
-  //       onExchange(value);
-  //       onDismiss();
-  //     }}
-  //     action={action}
-  //     tokenName={fromTokenName}
-  //   />,
-  // );
-
+ 
   return (
     <div className="bond-content-jt">
       <div className="bond-box-jt">
@@ -85,7 +70,7 @@ const BondDash = () => {
           <div className="btn-content">
             <p>Purchase BBond</p>
           </div>
-          <button onClick={onPresent1}>Reedeem Bobm</button>
+          <button onClick={onPresent1}>Reedeem</button>
         </div>
       </div>
     </div>

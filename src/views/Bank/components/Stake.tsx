@@ -1,15 +1,10 @@
 import React, { useMemo, useContext } from 'react';
 import styled from 'styled-components';
-
-// import Button from '../../../components/Button';
 import { Button, Card, CardContent, Typography } from '@material-ui/core';
-// import Card from '../../../components/Card';
-// import CardContent from '../../../components/CardContent';
 import CardIcon from '../../../components/CardIcon';
 import { AddIcon, RemoveIcon } from '../../../components/icons';
 import FlashOnIcon from '@material-ui/icons/FlashOn';
 import IconButton from '../../../components/IconButton';
-//import Label from '../../../components/Label';
 import Value from '../../../components/Value';
 import { ThemeContext } from 'styled-components';
 
@@ -63,7 +58,7 @@ const Stake: React.FC<StakeProps> = ({ bank }) => {
         onDismissDeposit();
       }}
       tokenName={bank.depositTokenName}
-    />, 
+    />,
   );
 
   const [onPresentZap, onDissmissZap] = useModal(
@@ -102,17 +97,16 @@ const Stake: React.FC<StakeProps> = ({ bank }) => {
             <Value value={getDisplayBalance(stakedBalance, bank.depositToken.decimal)} />
 
             {/* <Label text={`≈ $${earnedInDollars}`} /> */}
-
-            <Typography style={{ textTransform: 'uppercase', color: '#fffff' }}>{`≈ $${earnedInDollars}`}</Typography>
-            <Typography style={{ textTransform: 'uppercase', color: '#f9d749' }}>
+            <Typography style={{textTransform: 'uppercase', color: '#fffff'}}>
+                      {`≈ $${earnedInDollars}`}
+            </Typography>
+               <Typography style={{textTransform: 'uppercase', color: '#f9d749'}}>
+ 
               {`${bank.depositTokenName} Staked`}
             </Typography>
             {/* <Label text={`${bank.depositTokenName} Staked`} /> */}
           </StyledCardHeader>
-          {/* <IconButton onClick={onPresentWithdraw}>
-            <RemoveIcon />
-            asda
-          </IconButton> */}
+          {}
           <IconButton
             disabled={bank.closedForStaking}
             onClick={() => (bank.closedForStaking ? null : onPresentDeposit())}

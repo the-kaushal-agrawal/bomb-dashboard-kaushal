@@ -9,16 +9,14 @@
 
 .bond-content-jt .btn-content p {
   margin: 0;
-  /* width: 0; */
+ 
 }
 
 .bond-content-jt p {
   font-weight: 300;
   font-size: 16px;
   line-height: 25px;
-  /* identical to box height, or 156% */
-
-  text-align: center;
+   text-align: center;
 }
 
 .bond-content-jt div {
@@ -26,11 +24,8 @@
   font-weight: 700;
   font-size: 22px;
   line-height: 30px;
-  /* identical to box height */
-
-  text-align: center;
-
-  color: #ffffff;
+   text-align: center;
+ color: #ffffff;
 }
 
 .bond-content-jt .bond-box-btn-jt .btn-container-jt{

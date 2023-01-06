@@ -13,31 +13,21 @@ import moment from 'moment';
 import { Link } from 'react-router-dom';
 import HomeImage from '../../assets/img/background.jpg';
 import { createGlobalStyle } from 'styled-components';
-
-import img1 from '../../assets/img/bomb-bitcoin-LP.png';
-import img2 from '../../assets/img/bshare-bnb-LP.png';
-import img3 from '../../assets/img/bbond.png';
-import img4 from '../../assets/img/bshares.png';
+//importing images
+import f_im from '../../assets/img/bomb-bitcoin-LP.png';
+import s_im from '../../assets/img/bshare-bnb-LP.png';
+import t_im from '../../assets/img/bbond.png';
+import fo_im from '../../assets/img/bshares.png';
 import meta from '../../assets/img/metamask-fox.svg';
 import doc from '../../assets/img/doc.png';
-import discord from '../../assets/img/discord.png';
-// const BackgroundImage = createGlobalStyle`
-//   body {
-//     background: url(${HomeImage}) repeat !important;
-//     background-size: cover !important;
-//     background-color: #171923;
-//   }
-// `;
-//apr
+import dis from '../../assets/img/discord.png';
 import useFetchBoardroomAPR from '../../hooks/useFetchBoardroomAPR';
-
-//bomb-farm
 import useBank from '../../hooks/useBank';
 import { useWallet } from 'use-wallet';
 import useEarnings from '../../hooks/useEarnings';
-import Show from './components/Show';
-import BondDash from './components/BondDash';
-import { roundAndFormatNumber } from '../../0x';
+import Show from './components/Farmmiddle';
+import BondDash from './components/BondDashEnd';
+import { roundNumber } from '../../0x';
 import usebShareStats from '../../hooks/usebShareStats';
 import useBondStats from '../../hooks/useBondStats';
 import useRedeemOnBoardroom from '../../hooks/useRedeemOnBoardroom';
@@ -59,7 +49,6 @@ const Dashboard = () => {
   const earnings = useEarningsOnBoardroom();
   const bombStats = useBombStats();
 
-  // invest strategy section
   const stakedTokenPriceInDollars = useStakedTokenPriceInDollars('BSHARE', bombFinance.BSHARE);
   const tokenPriceInDollars = React.useMemo(
     () =>
@@ -79,12 +68,10 @@ const Dashboard = () => {
     [bombStats],
   );
   const bombPriceInBNB = useMemo(() => (bombStats ? Number(bombStats.tokenInFtm).toFixed(4) : null), [bombStats]);
-
-  //sshare
+ 
   const bShareStats = usebShareStats();
   const tBondStats = useBondStats();
-
-  // bomb-summary
+ 
   const boardroomAPR = useFetchBoardroomAPR();
   const bShareTotalSupply = useMemo(() => (bShareStats ? String(bShareStats.totalSupply) : null), [bShareStats]);
   const bShareCirculatingSupply = useMemo(
@@ -137,11 +124,11 @@ const Dashboard = () => {
   );
   return (
     <>
-      {/* <BackgroundImage /> */}
+       
       <div className={'dashboard_jt'}>
-        <div className="bomb-summary">
-          <div className="head-top">
-            <h2>Bomb Finance Summary</h2>
+        <div className="bombsum">
+          <div className="top-h">
+            <h3>Bomb Finance Summary</h3>
           </div>
           <div className="header-div"></div>
           <div className="summary">
@@ -155,14 +142,14 @@ const Dashboard = () => {
                   <th></th>
                 </tr>
                 <tr>
-                  <td className="td1">
-                    <img src={img1} />
+                  <td className="po1">
+                    <img src={f_im} />
                     <span>$BOMB</span>
                   </td>
-                  <td>{roundAndFormatNumber(bombCirculatingSupply, 2)}</td>
-                  <td> {roundAndFormatNumber(bombTotalSupply, 2)}</td>
+                  <td>{roundNumber(bombCirculatingSupply, 2)}</td>
+                  <td> {roundNumber(bombTotalSupply, 2)}</td>
                   <td>
-                    <div>${bombPriceInDollars ? roundAndFormatNumber(bombPriceInDollars, 2) : '-.--'}</div>{' '}
+                    <div>${bombPriceInDollars ? roundNumber(bombPriceInDollars, 2) : '-.--'}</div>{' '}
                     <div>{bombPriceInBNB ? bombPriceInBNB : '-.----'} BTC</div>
                   </td>
                   <td>
@@ -170,12 +157,12 @@ const Dashboard = () => {
                   </td>
                 </tr>
                 <tr>
-                  <td className="td1">
-                    <img src={img4} />
+                  <td className="po1">
+                    <img src={fo_im} />
                     <span>$BSHARE</span>
                   </td>
-                  <td>{roundAndFormatNumber(bShareCirculatingSupply, 2)} </td>
-                  <td>{roundAndFormatNumber(bShareTotalSupply, 2)}</td>
+                  <td>{roundNumber(bShareCirculatingSupply, 2)} </td>
+                  <td>{roundNumber(bShareTotalSupply, 2)}</td>
                   <td>
                     <div>${bSharePriceInDollars ? bSharePriceInDollars : '-.--'}</div>{' '}
                     <div>{bSharePriceInBNB ? bSharePriceInBNB : '-.----'} BNB</div>
@@ -185,12 +172,12 @@ const Dashboard = () => {
                   </td>
                 </tr>
                 <tr>
-                  <td className="td1">
-                    <img src={img3} />
+                  <td className="po1">
+                    <img src={t_im} />
                     <span>$BBOND</span>
                   </td>
-                  <td>{roundAndFormatNumber(tBondCirculatingSupply, 2)}</td>
-                  <td>{roundAndFormatNumber(tBondTotalSupply, 2)}</td>
+                  <td>{roundNumber(tBondCirculatingSupply, 2)}</td>
+                  <td>{roundNumber(tBondTotalSupply, 2)}</td>
                   <td>
                     <div>${bSharePriceInDollars ? bSharePriceInDollars : '-.--'}</div>{' '}
                     <div>{bSharePriceInBNB ? bSharePriceInBNB : '-.----'} BNB</div>
@@ -235,20 +222,20 @@ const Dashboard = () => {
             </div>
             <div className="links-to">
               <div>
-                <img src={discord} />
+                <img src={dis} />
                 Chat on Discord
               </div>
               <div>
                 <img src={doc} />
                 <a href={'https://docs.bomb.money/welcome-start-here/readme'} target="_blank">
-                  Read Doc
+                  Read Docs
                 </a>
               </div>
             </div>
             <div className="board-room">
               <div className="head">
                 <div className="head-img">
-                  <img src={img4} />
+                  <img src={fo_im} />
                 </div>
                 <div className="info">
                   <div className="content">
@@ -305,10 +292,10 @@ const Dashboard = () => {
                 <h2>Bomb Farms</h2>
                 <p>Stake your LP tokens in our farms to start earning $BSHARE</p>
               </div>
-              <div className="claim">Claim all</div>
+              <div className="claim">Claim All</div>
             </div>
-            <Show img={img1} id={'BombBtcbLPBShareRewardPool'} />
-            <Show img={img2} id={'BshareBnbLPBShareRewardPool'} />
+            <Show img={f_im} id={'BombBtcbLPBShareRewardPool'} />
+            <Show img={s_im} id={'BshareBnbLPBShareRewardPool'} />
           </div>
         ) : (
           <></>
@@ -316,12 +303,12 @@ const Dashboard = () => {
         <div className="bonds-container-jt">
           <div className="head-show">
             <div className="head-img-show">
-              <img src={img3} />
+              <img src={t_im} />
             </div>
             <div className="info-show">
               <div className="content-show">
                 <div className="head_content-show">
-                  <h2>Boardroom</h2>
+                  <h2>Bonds</h2>
                 </div>
                 <p>BBOND can be purchased only on contraction periods, when TWAP of BOMB is below 1</p>
               </div>

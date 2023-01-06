@@ -15,8 +15,8 @@ import useWithdraw from '../../../hooks/useWithdraw';
 import { getDisplayBalance } from '../../../utils/formatBalance';
 import DepositModal from '../../Bank/components/DepositModal';
 import WithdrawModal from '../../Bank/components/WithdrawModal';
-import './show.css';
-//image import
+import './farmmiddle.css';
+
 
 const Show = ({ id, img }) => {
   const bank = useBank(id);
@@ -33,8 +33,7 @@ const Show = ({ id, img }) => {
     [tokenStats],
   );
   const earnedInDollars = (Number(tokenPriceInDollars) * Number(getDisplayBalance(earnings))).toFixed(2);
-
-  //stack
+ 
   const stakedBalance = useStakedBalance(bank.contract, bank.poolId);
 
   const stakedTokenPriceInDollars = useStakedTokenPriceInDollars(bank.depositTokenName, bank.depositToken);
@@ -47,10 +46,8 @@ const Show = ({ id, img }) => {
   const stackedInDollars = (
     Number(tokenPriceInDollarsStack) * Number(getDisplayBalance(stakedBalance, bank.depositToken.decimal))
   ).toFixed(2);
-
-  //   const {onRedeem} = useRedeem(bank);
+ 
   const { onReward } = useHarvest(bank);
-
   const tokenBalance = useTokenBalance(bank.depositToken);
   const { onStake } = useStake(bank);
   const { onWithdraw } = useWithdraw(bank);
@@ -89,7 +86,7 @@ const Show = ({ id, img }) => {
         <div className="info-show">
           <div className="content-show">
             <div className="head_content-show">
-              <h2>Boardroom</h2>
+              <h2>BOMB-BTCB</h2>
               <div className="recommend">Recommended</div>
             </div>
           </div>
@@ -116,7 +113,7 @@ const Show = ({ id, img }) => {
         </table>
 
         <div className="buttons-container">
-          <button onClick={onPresentDeposit}>deposit</button>
+          <button onClick={onPresentDeposit}>Deposit</button>
           <button onClick={onPresentWithdraw}>Withdraw</button>
           <button onClick={onReward}>Claim Rewards</button>
         </div>

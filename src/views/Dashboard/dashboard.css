@@ -3,14 +3,13 @@
 }
 
 .dashboard_jt h2 {
-  /* font-family: Nunito; */
-  font-weight: 400;
-  font-size: 22px;
-  line-height: 30px;
+ font-weight: 350;
+  font-size: 21px;
+  line-height: 29px;
   color: #fff !important;
 }
 
-.dashboard_jt .bomb-summary {
+.dashboard_jt .bombsum {
   box-sizing: border-box;
   width: 80%;
   padding: 10px 3%;
@@ -19,32 +18,32 @@
   backdrop-filter: blur(5px);
   border-radius: 10px;
 }
-.dashboard_jt .bomb-summary .summary {
+.dashboard_jt .bombsum .summary {
   display: flex;
   justify-content: space-between;
 }
 
-.dashboard_jt .bomb-summary .header-dev {
+.dashboard_jt .bombsum .header-dev {
   height: 0px;
 }
 
-.dashboard_jt .bomb-summary .head-top {
+.dashboard_jt .bombsum .top-h {
   width: 100%;
   padding-bottom: 5px;
   border-bottom: 0.5px solid rgba(195, 197, 203, 0.75);
 }
 
-.dashboard_jt .bomb-summary .head-top h2 {
+.dashboard_jt .bombsum .top-h h3 {
   text-align: center;
 }
 
-.dashboard_jt .bomb-summary .left-summary {
+.dashboard_jt .bombsum .left-summary {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-.dashboard_jt .bomb-summary .left-head {
+.dashboard_jt .bombsum .left-head {
   font-weight: 400;
   font-size: 15px;
   line-height: 25px;
@@ -53,7 +52,7 @@
   margin: 5px 0;
 }
 
-.dashboard_jt .bomb-summary .bold-summary {
+.dashboard_jt .bombsum .bold-summary {
   font-weight: 600;
   font-size: 25px;
   line-height: 25px;
@@ -100,29 +99,29 @@
   margin: 5px 0;
 }
 
-.dashboard_jt .bomb-summary .left-status span {
+.dashboard_jt .bombsum .left-status span {
   color: #00e8a2;
 }
 
 .dashboard_jt .bold-summary .summary-table table th {
 }
 
-.dashboard_jt .bomb-summary .summary-table table th {
+.dashboard_jt .bombsum .summary-table table th {
   border-bottom: 1px solid #fff !important;
   padding: 15px;
 }
-.dashboard_jt .bomb-summary .summary-table table td {
+.dashboard_jt .bombsum .summary-table table td {
   text-align: center;
   padding: 10px;
 }
 
-.dashboard_jt .bomb-summary .summary-table table .td1 {
+.dashboard_jt .bombsum .summary-table table .po1 {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.dashboard_jt .bomb-summary .summary-table table tr img {
+.dashboard_jt .bombsum .summary-table table tr img {
   width: 30px;
   margin: 4px;
 }
@@ -143,8 +142,6 @@
   flex-direction: row-reverse;
   margin-bottom: 10px;
 }
-
-
 
 .dashboard_jt .invest-strategy .strategy-col .read_link a {
   text-align: right;
@@ -169,12 +166,10 @@
       rgba(0, 245, 171, 0.5) 0%,
       rgba(0, 173, 232, 0.5) 100%
     )
-    /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+    ;
   font-weight: 800;
   font-size: 24px;
   line-height: 33px;
-  /* identical to box height */
-
   display: flex;
   justify-content: center;
   align-items: center;
@@ -205,8 +200,7 @@
   background: rgba(35, 40, 75, 0.75);
   border: 1px solid #728cdf;
   backdrop-filter: blur(5px);
-  /* Note: backdrop-filter has minimal browser support */
-  padding: 10px 3%;
+ padding: 10px 3%;
   border-radius: 10px;
 }
 
@@ -265,12 +259,10 @@
 
 
 .dashboard_jt .invest-strategy .board-room .info .content {
-  /* display: flex; */
-}
+ }
 
 .dashboard_jt .invest-strategy .board-room .info .content .head_content {
-  /* display: flex; */
-  display: flex;
+ display: flex;
   align-items: center   ;
 }
 
@@ -342,8 +334,6 @@
   background: rgba(35, 40, 75, 0.75);
   border: 1px solid #728cdf;
   backdrop-filter: blur(5px);
-  /* Note: backdrop-filter has minimal browser support */
-
   border-radius: 10px;
 }
 .dashboard_jt .bomb-farm .head {
@@ -360,8 +350,6 @@
   background: rgba(35, 40, 75, 0.75);
   border: 1px solid #728cdf;
   backdrop-filter: blur(5px);
-  /* Note: backdrop-filter has minimal browser support */
-
   border-radius: 10px;
 }
 
@@ -384,6 +372,5 @@
   font-weight: 400;
   font-size: 14px;
   line-height: 19px;
-
-  color: #ffffff;
+ color: #ffffff;
 }
